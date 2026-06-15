@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Azubuike Precious - AI Engineer, Generative AI Developer, and Automation Solutions Builder.">
-    <title>Azubuike Precious | AI Engineer</title>
+    <meta name="description" content="Precious Azubuike - AI Engineer, Generative AI Developer, and Automation Solutions Builder.">
+    <title>Precious Azubuike | AI Engineer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="#home" aria-label="Azubuike Precious home">AP</a>
+        <a class="brand" href="#home" aria-label="Precious Azubuike home">
+            <span>PA</span>
+            <img data-logo-img src="images/logo.png" alt="Precious Azubuike logo">
+        </a>
         <nav class="nav" aria-label="Primary navigation">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -26,7 +29,7 @@
         <section class="hero" id="home">
             <div class="hero-content">
                 <p class="eyebrow">AI Engineer | Generative AI Developer | Automation Solutions Builder</p>
-                <h1>Azubuike Precious</h1>
+                <h1>Precious Azubuike</h1>
                 <p class="hero-copy">
                     MSc Artificial Intelligence & Robotics graduate with hands-on experience building AI-powered
                     applications, computer vision systems, automation workflows, conversational AI solutions, and
@@ -34,15 +37,13 @@
                 </p>
                 <div class="hero-actions">
                     <a class="button primary" href="#projects">View Projects</a>
-                    <a class="button secondary" href="Azubuike-Precious-CV.pdf" download>Download CV</a>
+                    <a class="button secondary" href="Azubuike-Precious-CV.pdf" download="Precious-Azubuike-CV.pdf">Download CV</a>
                     <a class="button ghost" href="#contact">Contact Me</a>
                 </div>
             </div>
-            <div class="hero-visual" aria-hidden="true">
-                <img src="images/classwork1.png" alt="">
-                <div class="signal-card">
-                    <span>Focus</span>
-                    <strong>Applied AI systems that automate decisions, workflows, and user experiences.</strong>
+            <div class="hero-visual">
+                <div class="hero-logo-card">
+                    <img data-logo-img src="images/logo.png" alt="Precious Azubuike AI Engineer logo">
                 </div>
             </div>
         </section>
@@ -340,8 +341,40 @@
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Azubuike Precious. AI Engineer and Automation Solutions Builder.</p>
+        <p>&copy; 2026 Precious Azubuike. AI Engineer and Automation Solutions Builder.</p>
         <a href="#home">Back to top</a>
     </footer>
+
+    <aside class="assistant-widget" aria-label="AI visitor assistant">
+        <button class="assistant-toggle" type="button" aria-expanded="false" aria-controls="assistant-panel">
+            AI
+        </button>
+        <section class="assistant-panel" id="assistant-panel" hidden>
+            <div class="assistant-header">
+                <div>
+                    <span>Portfolio Assistant</span>
+                    <strong>Ask about projects or leave a message</strong>
+                </div>
+                <button class="assistant-close" type="button" aria-label="Close assistant">&times;</button>
+            </div>
+            <div class="assistant-messages" id="assistant-messages" aria-live="polite"></div>
+            <form class="assistant-form" id="assistant-form">
+                <div class="assistant-options" id="assistant-options"></div>
+                <label class="assistant-input-label" for="assistant-input">Your reply</label>
+                <div class="assistant-input-row">
+                    <input id="assistant-input" type="text" autocomplete="off" placeholder="Type your reply">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </section>
+    </aside>
+    <script src="visitor-assistant.js"></script>
+    <script>
+        document.querySelectorAll("[data-logo-img]").forEach((image) => {
+            image.addEventListener("error", () => {
+                image.hidden = true;
+            });
+        });
+    </script>
 </body>
 </html>
